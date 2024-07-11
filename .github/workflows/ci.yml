@@ -2,7 +2,7 @@ name: Tarea Automatizada de Pruebas Unitarias
 
 env:
   SONAR_ORG: 'jesushuallpaepis3'                  # Nombre de la organización en SonarCloud
-  SONAR_PROJECT: 'jesushuallpaepis3_sosaa'   # Key ID del proyecto en SonarCloud
+  SONAR_PROJECT: 'jesushuallpaepis3_sosaa'        # Key ID del proyecto en SonarCloud
 
 on:
   push:
@@ -25,6 +25,9 @@ jobs:
 
     - name: Install Composer dependencies
       run: composer install
+
+    - name: Give execute permission to PHPUnit
+      run: chmod +x vendor/bin/phpunit
 
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit --log-junit junit.xml --coverage-clover coverage.xml
