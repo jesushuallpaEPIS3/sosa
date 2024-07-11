@@ -57,6 +57,9 @@ jobs:
         name: coverage-report
         path: coverage.xml
 
+    - name: List coverage directory
+      run: ls -R coverage
+
     - name: Deploy PHPUnit coverage report to GitHub Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
@@ -64,3 +67,12 @@ jobs:
         personal_token: ${{ secrets.PAT_TOKEN }}
         publish_branch: unittests
         publish_dir: coverage
+        allow_empty_commit: false
+        keep_files: false
+        force_orphan: false
+        enable_jekyll: false
+        exclude_assets: .github
+      env:
+        COMPOSER_PROCESS_TIMEOUT: 0
+        COMPOSER_NO_INTERACTION: 1
+        COMPOSER_NO_AUDIT: 1
