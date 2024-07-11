@@ -30,7 +30,7 @@ jobs:
       run: chmod +x vendor/bin/phpunit
 
     - name: Run PHPUnit tests
-      run: vendor/bin/phpunit --log-junit junit.xml --coverage-clover coverage.xml
+      run: php vendor/phpunit/phpunit/phpunit --log-junit junit.xml --coverage-clover coverage.xml
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
