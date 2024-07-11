@@ -56,6 +56,9 @@ jobs:
       with:
         name: coverage-report
         path: coverage.xml
+        
+    - name: Create coverage directory
+      run: mkdir -p coverage
 
     - name: List coverage directory
       run: ls -R coverage
