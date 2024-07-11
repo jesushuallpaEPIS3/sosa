@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         verbose="true"> <!-- Agrega verbose="true" para ver detalles de la cobertura -->
+
   <testsuites>
     <testsuite name="My Test Suite">
       <directory>tests</directory>
     </testsuite>
   </testsuites>
+
   <source>
     <include>
       <directory suffix=".php">src</directory>
     </include>
   </source>
+
+  <coverage><!-- Configuración para la cobertura de código -->
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+    <report>
+      <html outputDirectory="coverage-report"/> <!-- Opcional: genera un reporte HTML -->
+      <text outputFile="coverage.txt"/> <!-- Opcional: genera un reporte de texto -->
+      <!-- Puedes agregar más formatos de reporte según tu preferencia -->
+    </report>
+  </coverage>
+
 </phpunit>
