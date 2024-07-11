@@ -69,7 +69,7 @@ jobs:
       with:
         personal_token: ${{ secrets.PAT_TOKEN }}
         publish_branch: unittests
-        publish_dir: coverage
+        publish_dir: coverage-report
         allow_empty_commit: false
         keep_files: false
         force_orphan: false
