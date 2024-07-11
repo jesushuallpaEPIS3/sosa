@@ -60,8 +60,8 @@ jobs:
     - name: Create coverage directory
       run: mkdir -p coverage
 
-    - name: List coverage directory
-      run: ls -R coverage
+    - name: List coverage-report directory
+      run: ls -R coverage-report
 
     - name: Deploy PHPUnit coverage report to GitHub Pages
       if: always()
