@@ -1,0 +1,63 @@
+name: Tarea Automatizada de Pruebas Unitarias
+
+env:
+  SONAR_ORG: 'jesushuallpaepis3'                  # Nombre de la organización en SonarCloud
+  SONAR_PROJECT: 'jesushuallpaepis3_sosaa'   # Key ID del proyecto en SonarCloud
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2' # Ajusta la versión de PHP según tus necesidades
+        extensions: mbstring, intl, pdo_mysql
+
+    - name: Install Composer dependencies
+      run: composer install
+
+    - name: Run PHPUnit tests
+      run: vendor/bin/phpunit --log-junit junit.xml --coverage-clover coverage.xml
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=${{ env.SONAR_PROJECT }}
+          -Dsonar.organization=${{ env.SONAR_ORG }}
+          -Dsonar.php.coverage.reportPaths=coverage.xml
+
+    - name: Upload PHPUnit test report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: junit-report
+        path: junit.xml
+
+    - name: Upload PHPUnit coverage report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage-report
+        path: coverage.xml
+
+    - name: Deploy PHPUnit coverage report to GitHub Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.PAT_TOKEN }}
+        publish_branch: unittests
+        publish_dir: coverage
