@@ -1,8 +1,8 @@
 <?php
-namespace Tests\MODEL;
+namespace Tests\Model;
 
 use PHPUnit\Framework\TestCase;
-use MODEL\Conectar;
+use Model\Conectar;
 
 class dbTest extends TestCase {
     public function testConexion() {
