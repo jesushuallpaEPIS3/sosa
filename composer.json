@@ -3,8 +3,8 @@
         "psr-4": {
             "App\\": "src/",
             "DB\\": "src/DB/",
-            "CONTROLLER\\": "src/CONTROLLER/",
-            "MODEL\\": "src/MODEL/"
+            "App\\Controller\\": "src/CONTROLLER/",
+            "App\\Model\\": "src/MODEL/"
             
         }
     },

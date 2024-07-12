@@ -1,7 +1,7 @@
 <?php
-namespace MODEL;
+namespace App\Model;
 
-use DB\Conectar; 
+use DB\Conectar; // Importa la clase Conectar desde el namespace DB
 
 class Usuario {
     private $db;
