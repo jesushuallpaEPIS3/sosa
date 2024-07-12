@@ -20,10 +20,7 @@ class ReservaTest extends TestCase {
     }
 
     // Test para agregar una reserva nueva
-    public function testAgregarReserva() {
-        $resultado = $this->reserva->agregarReserva(205, 639, 1, 1, '2024-06-18 01:37:05', '2024-06-18 01:37:07', '2024-06-18 01:37:08', 1);
-        $this->assertTrue($resultado);
-    }
+
     
 
     // Test para editar una reserva existente

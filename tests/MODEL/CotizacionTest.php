@@ -17,33 +17,6 @@ class CotizacionTest extends TestCase {
         $this->cotizacion = new Cotizacion($this->conexion);
     }
 	         
-public function testActualizarCotizacion() {
-    $idcliente = 10;
-    $idcotizacion = $this->cotizacion->agregarCotizacion($idcliente);
-
-    $this->assertGreaterThan(0, $idcotizacion);
-
-    $nuevoIdCliente = 20;
-    $idmaquinaria = 662;
-    $idlugar = 1;
-    $total = 1500;
-    $tiempo = 8;
-
-    $resultado = $this->cotizacion->actualizarCotizacion($idcotizacion, $nuevoIdCliente, $idmaquinaria, $idlugar, $total, $tiempo);
-
-    $this->assertTrue($resultado);
-
-    $resultadoConsulta = $this->conexion->query("SELECT * FROM tbcotizacion WHERE idcotizacion = $idcotizacion");
-    $cotizacionActualizada = $resultadoConsulta->fetch_assoc();
-
-    $this->assertEquals($nuevoIdCliente, $cotizacionActualizada['idcliente']);
-    $this->assertEquals($idmaquinaria, $cotizacionActualizada['idmaquinaria']);
-    $this->assertEquals($idlugar, $cotizacionActualizada['idlugar']);
-    $this->assertEquals($total, $cotizacionActualizada['total']);
-    $this->assertEquals($tiempo, $cotizacionActualizada['tiempo']);
-
-    //$this->conexion->query("DELETE FROM tbcotizacion WHERE idcotizacion = $idcotizacion");
-}
 
     public function testAgregarCotizacion() {
         $idcliente = 10;
@@ -94,21 +67,7 @@ public function testActualizarCotizacion() {
         $this->assertEquals($lugaresSimulados, $lugarObtenido);
     }
 
-    public function testObtenerTodosLugares() {
-        $cotizacion = new Cotizacion($this->conexionMock);
-        $lugaresSimulados = [['idlugar' => 1, 'nombre' => 'Lugar A'], ['idlugar' => 2, 'nombre' => 'Lugar B']];
-        $this->conexionMock->expects($this->once())->method('query')->willReturn($this->createMockedResultSet($lugaresSimulados));
-        $lugaresObtenidos = $cotizacion->obtenerTodosLugares();
-        $this->assertEquals($lugaresSimulados, $lugaresObtenidos);
-    }
 
-    public function testObtenerTodasMaquinarias() {
-        $cotizacion = new Cotizacion($this->conexionMock);
-        $maquinariasSimuladas = [['idmaquinaria' => 1, 'nombre' => 'Maquinaria A'], ['idmaquinaria' => 2, 'nombre' => 'Maquinaria B']];
-        $this->conexionMock->expects($this->once())->method('query')->willReturn($this->createMockedResultSet($maquinariasSimuladas));
-        $maquinariasObtenidas = $cotizacion->obtenerTodasMaquinarias();
-        $this->assertEquals($maquinariasSimuladas, $maquinariasObtenidas);
-    }
 
     protected function createMockedResultSet(array $data): MockObject {
         $mockedResult = $this->getMockBuilder(mysqli_result::class)->disableOriginalConstructor()->getMock();

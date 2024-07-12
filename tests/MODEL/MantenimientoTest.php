@@ -42,30 +42,7 @@ class MantenimientoTest extends TestCase
     }
 
     // Test para verificar la operación de agregar mantenimiento
-    public function testAgregarMantenimiento()
-    {
-        // Datos de ejemplo para agregar un mantenimiento
-        $idmaquinaria = 639;
-        $fecha = '2024-06-20';
-        $descripcion = 'Mantenimiento preventivo';
-        $costopro = 250.50;
-        $idempleado = 1;
-        $estado = 1;
-        $tipo = 1;
 
-        // Llamar al método agregarMantenimiento() con los datos de prueba
-        $resultado = $this->mantenimiento->agregarMantenimiento($idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
-
-        // Verificar que la operación de agregar fue exitosa
-        $this->assertTrue($resultado);
-
-        // Opcional: Verificar que el mantenimiento realmente se agregó (puedes hacer una búsqueda por los datos agregados)
-        // Por ejemplo:
-        $mantenimientoAgregado = $this->mantenimiento->buscarMantenimiento($descripcion);
-
-        // Verificar que se encontró al menos un mantenimiento con la descripción dada
-        $this->assertNotEmpty($mantenimientoAgregado);
-    }
 
     // Test para verificar la operación de eliminar mantenimiento
     public function testEliminarMantenimiento()

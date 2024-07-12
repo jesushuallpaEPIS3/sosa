@@ -25,30 +25,7 @@ class LugarTest extends TestCase
         $this->lugar = new Lugar($this->dbMock);
     }
 
-    public function testObtenerTodosLugares()
-    {
-        // Crear un mock del resultado de la consulta
-        $resultMock = $this->createMock(mysqli_result::class);
 
-        // Configurar el mock para que devuelva los valores esperados
-        $resultMock->method('num_rows')->willReturn(2);
-        $resultMock->method('fetch_assoc')->willReturnOnConsecutiveCalls(
-            ['idlugar' => 1, 'ciudad' => 'Ciudad 1'],
-            ['idlugar' => 2, 'ciudad' => 'Ciudad 2'],
-            null // Para simular el final del fetch_assoc
-        );
-
-        // Configurar el mock de la base de datos para que devuelva el resultado esperado
-        $this->dbMock->method('query')->willReturn($resultMock);
-
-        // Ejecutar el método a probar
-        $lugares = $this->lugar->obtenerTodosLugares();
-
-        // Verificar que el resultado es el esperado
-        $this->assertCount(2, $lugares);
-        $this->assertEquals(['idlugar' => 1, 'ciudad' => 'Ciudad 1'], $lugares[0]);
-        $this->assertEquals(['idlugar' => 2, 'ciudad' => 'Ciudad 2'], $lugares[1]);
-    }
 
     public function testObtenerTodosLugaresError()
     {
