@@ -2,11 +2,11 @@
 namespace Tests\MODEL;
 
 use PHPUnit\Framework\TestCase;
-use Model\Usuario;
+use App\Model\Usuario; // Asegúrate de que esta ruta sea correcta
 
 class UsuarioTest extends TestCase {
     public function testConexion() {
-        $conexion = Conectar::conexion();
+        $conexion = Usuario::conexion();
         $this->assertInstanceOf(\mysqli::class, $conexion);
     }
 }
