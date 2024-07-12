@@ -1,15 +1,13 @@
 <?php
-namespace Tests\Model;
+namespace Tests\DB;
 
 use PHPUnit\Framework\TestCase;
-use App\Model\Usuario;
+use DB\Conectar;
 
-class UsuarioTest extends TestCase {
-    public function testLogin() {
-        $usuario = new Usuario();
-        $result = $usuario->login('jesus', '123');
-        $this->assertNotNull($result);
-        $this->assertArrayHasKey('usuario', $result);
+class dbTest extends TestCase {
+    public function testConexion() {
+        $conexion = Conectar::conexion();
+        $this->assertInstanceOf(\mysqli::class, $conexion);
     }
 }
 ?>
