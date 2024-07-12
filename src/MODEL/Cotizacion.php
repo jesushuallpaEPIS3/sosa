@@ -28,35 +28,6 @@ class Cotizacion {
         }
     }
     
-    
-    
-    
-
-    public function obtenerClientePorId($idcliente) {
-        try {
-            $conexion = Conectar::conexion();
-            
-            $sql = "SELECT * FROM tbcliente WHERE idcliente = ?";
-            
-            $stmt = $conexion->prepare($sql);
-            
-            $stmt->bind_param("i", $idcliente);
-            
-            $stmt->execute();
-            
-            $resultado = $stmt->get_result();
-            
-            $cliente = $resultado->fetch_assoc();
-            
-            $stmt->close();
-            $conexion->close();
-            return $cliente;
-        } catch (Exception $e) {
-            echo "Error al obtener cliente por ID: " . $e->getMessage();
-            return false;
-        }
-    }
-    
     public function obtenerMaquinariaPorId($idmaquinaria) {
         try {
             $conexion = Conectar::conexion();

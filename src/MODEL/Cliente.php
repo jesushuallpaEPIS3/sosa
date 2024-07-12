@@ -48,7 +48,6 @@ class Cliente {
             $sql = "DELETE FROM tbcliente WHERE idcliente = ?";
             $stmt = $this->db->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Error en la preparación de la consulta: " . $this->db->error);
             }
             $stmt->bind_param("i", $idcliente);
             $stmt->execute();
@@ -116,32 +115,6 @@ class Cliente {
             }
         } catch (Exception $e) {
             echo "Error al obtener el último ID de cliente: " . $e->getMessage();
-            return false;
-        }
-    }
-
-    /*NUEVO*/ 
-    public function obtenerClientePorId($idcliente) {
-        try {
-            $conexion = Conectar::conexion();
-            
-            $sql = "SELECT * FROM tbcliente WHERE idcliente = ?";
-            
-            $stmt = $conexion->prepare($sql);
-            
-            $stmt->bind_param("i", $idcliente);
-            
-            $stmt->execute();
-            
-            $resultado = $stmt->get_result();
-            
-            $cliente = $resultado->fetch_assoc();
-            
-            $stmt->close();
-            $conexion->close();
-            return $cliente;
-        } catch (Exception $e) {
-            echo "Error al obtener cliente por ID: " . $e->getMessage();
             return false;
         }
     }
