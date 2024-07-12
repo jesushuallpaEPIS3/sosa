@@ -2,7 +2,7 @@
 namespace Tests\MODEL;
 
 use PHPUnit\Framework\TestCase;
-use DB\Conectar;
+use MODEL\Conectar;
 
 class dbTest extends TestCase {
     public function testConexion() {
