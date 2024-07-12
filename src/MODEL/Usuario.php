@@ -1,21 +1,17 @@
 <?php
-namespace App\Model;
 
-use DB\Conectar;
+namespace DB;
 
-class Usuario {
-    private $db;
+class Conectar {
+    private static $connection;
 
-    public function __construct(){
-        $this->db = Conectar::conexion();
-    }
-
-    public function login($username, $password){
-        $stmt = $this->db->prepare("SELECT * FROM tbadmin WHERE usuario = ? AND password = ?");
-        $stmt->bind_param("ss", $username, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_assoc();
+    public static function conexion() {
+        if (!self::$connection) {
+            self::$connection = new \mysqli('localhost', 'user', 'password', 'database');
+            if (self::$connection->connect_error) {
+                die("Connection failed: " . self::$connection->connect_error);
+            }
+        }
+        return self::$connection;
     }
 }
-?>
