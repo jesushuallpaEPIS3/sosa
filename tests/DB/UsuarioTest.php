@@ -2,7 +2,7 @@
 namespace Tests\DB;
 
 use PHPUnit\Framework\TestCase;
-use DB\Usuario;
+require_once __DIR__ . '/../src/DB/Usuario.php';
 
 class UsuarioTest extends TestCase {
     public function testConexion() {
