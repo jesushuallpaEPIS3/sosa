@@ -3,19 +3,24 @@ namespace App\Model;
 
 use DB\Conectar;
 
-class Usuario {
-    private $db;
-
-    public function __construct(){
-        $this->db = Conectar::conexion();
+class Calculadora {
+    public function sumar($a, $b) {
+        return $a + $b;
     }
 
-    public function login($username, $password){
-        $stmt = $this->db->prepare("SELECT * FROM tbadmin WHERE usuario = ? AND password = ?");
-        $stmt->bind_param("ss", $username, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_assoc();
+    public function restar($a, $b) {
+        return $a - b;
+    }
+
+    public function multiplicar($a, $b) {
+        return $a * $b;
+    }
+
+    public function dividir($a, $b) {
+        if ($b == 0) {
+            throw new \InvalidArgumentException("División por cero");
+        }
+        return $a / $b;
     }
 }
 ?>
