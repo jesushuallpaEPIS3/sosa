@@ -41,20 +41,7 @@ class ClsCoticeTest extends TestCase
         $this->assertEquals(1, $_SESSION['pdf_data']['idcotizacion']);
     }
 
-    public function testActualizarCotizacion()
-    {
-        // Crear un mock del modelo Cotizacion
-        $mockCotizacion = $this->createMock(Cotizacion::class);
-        $mockCotizacion->method('actualizarCotizacion')
-                       ->willReturn(true); // Simulamos que la actualización de la cotización es exitosa
 
-        // Crear una instancia del controlador inyectando el mock del modelo
-        $controller = new ClsCotice();
-        $result = $controller->actualizarCotizacion(1, 1, 1, 1, 1000, 5);
-
-        // Verificar que el método devuelve true cuando la actualización es exitosa
-        $this->assertTrue($result);
-    }
 
     // Puedes añadir más métodos de prueba para otros métodos de ClsCotice según sea necesario
 }

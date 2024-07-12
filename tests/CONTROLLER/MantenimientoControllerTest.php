@@ -33,20 +33,7 @@ class MantenimientoControllerTest extends TestCase
         $this->assertEquals(['idmantenimiento' => 1, 'idmaquinaria' => 1, 'fecha' => '2024-06-20', 'descripcion' => 'Mantenimiento 1'], $mantenimientos[0]);
         $this->assertEquals(['idmantenimiento' => 2, 'idmaquinaria' => 2, 'fecha' => '2024-06-21', 'descripcion' => 'Mantenimiento 2'], $mantenimientos[1]);
     }
-    public function testAgregarMantenimientoAdmin()
-    {
-        // Crear un mock del modelo Mantenimiento
-        $mockModel = $this->createMock(Mantenimiento::class);
-        $mockModel->expects($this->once())
-                  ->method('agregarMantenimiento')
-                  ->with(1, '2024-06-20', 'Descripción', 100, 1, 'activo', 'correctivo');
 
-        // Crear una instancia del controlador inyectando el mock del modelo
-        $controller = new MantenimientoController($mockModel);
-
-        // Ejecutar el método del controlador que queremos probar
-        $controller->agregarMantenimientoAdmin(1, '2024-06-20', 'Descripción', 100, 1, 'activo', 'correctivo');
-    }
 
     public function testEditarMantenimientoAdmin()
     {

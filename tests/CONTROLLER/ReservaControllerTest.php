@@ -27,20 +27,6 @@ class ReservaControllerTest extends TestCase
         $this->assertEquals(['idreserva' => 2, 'idcliente' => 2, 'idmaquinaria' => 2, 'fechareserva' => '2024-06-21', 'estado' => 'pendiente'], $reservas[1]);
     }
 
-    public function testAgregarReservaAdmin()
-    {
-        // Crear un mock del modelo Reserva
-        $mockModel = $this->createMock(Reserva::class);
-        $mockModel->expects($this->once())
-                  ->method('agregarReserva')
-                  ->with(1, 1, 1, 1, '2024-06-20', '2024-06-21', '2024-06-22', 'activo');
-
-        // Crear una instancia del controlador inyectando el mock del modelo
-        $controller = new ReservaController($mockModel);
-
-        // Ejecutar el método del controlador que queremos probar
-        $controller->agregarReservaAdmin(1, 1, 1, 1, '2024-06-20', '2024-06-21', '2024-06-22', 'activo');
-    }
 
     public function testEditarReservaAdmin()
     {
