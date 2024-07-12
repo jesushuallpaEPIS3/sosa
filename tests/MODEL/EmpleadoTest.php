@@ -1,4 +1,6 @@
 <?php
+namespace Tests\Model;
+
 use PHPUnit\Framework\TestCase;
 use App\Model\Empleado;
 
@@ -7,34 +9,39 @@ class EmpleadoTest extends TestCase {
     private $empleado;
 
     protected function setUp(): void {
-        // Crea un objeto simulado de la base de datos
-        $this->db = $this->createMock(mysqli::class);
+        // Crear un mock de la conexión de base de datos
+        $this->db = $this->createMock(\mysqli::class);
+
+        // Crear la instancia de Empleado con el mock de la base de datos
         $this->empleado = new Empleado($this->db);
     }
 
     public function testListarEmpleados() {
-        // Simula el resultado de la consulta
-        $resultado = [
-            ['id' => 1, 'nombre' => 'Juan', 'apellido' => 'Pérez'],
-            ['id' => 2, 'nombre' => 'Ana', 'apellido' => 'Gómez'],
+        $resultadoEsperado = [
+            ["idempleado" => '1', "nombre" => 'Juan', "apellido" => 'Perez', "idcargo" => '1', "dni" => '12345678'],
+            ["idempleado" => '2', "nombre" => 'Maria', "apellido" => 'Lopez', "idcargo" => '2', "dni" => '87654321'],
         ];
 
-        $consultaMock = $this->createMock(mysqli_result::class);
+        // Crear un mock de los resultados de la consulta
+        $mockResult = $this->createMock(\mysqli_result::class);
+        $mockResult->expects($this->exactly(3))
+            ->method('fetch_assoc')
+            ->will($this->onConsecutiveCalls(
+                $resultadoEsperado[0],
+                $resultadoEsperado[1],
+                null
+            ));
 
-        // Cambia onConsecutiveCalls por willReturn
-        $consultaMock->method('fetch_assoc')
-            ->willReturnOnConsecutiveCalls($resultado[0], $resultado[1], null);
+        // Configurar el mock de la base de datos para devolver el mock de los resultados
+        $this->db->expects($this->once())
+            ->method('query')
+            ->with($this->equalTo("SELECT * FROM tbempleado"))
+            ->willReturn($mockResult);
 
-        $this->db->method('query')->willReturn($consultaMock);
-
-        // Ejecuta el método a probar
-        $empleados = $this->empleado->listarEmpleados();
-
-        // Verifica que el resultado sea el esperado
-        $this->assertCount(2, $empleados);
-        $this->assertEquals('Juan', $empleados[0]['nombre']);
-        $this->assertEquals('Ana', $empleados[1]['nombre']);
+        $result = $this->empleado->listarEmpleados();
+        $this->assertEquals($resultadoEsperado, $result);
     }
 
-    // Aquí puedes agregar más pruebas para otros métodos (agregar, editar, eliminar, buscar)
+    // Puedes agregar más tests para otros métodos aquí
 }
+?>

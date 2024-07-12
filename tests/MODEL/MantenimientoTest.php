@@ -42,9 +42,43 @@ class MantenimientoTest extends TestCase
     }
 
     // Test para verificar la operación de agregar mantenimiento
+    public function testAgregarMantenimiento()
+    {
+        // Datos de ejemplo para agregar un mantenimiento
+        $idmaquinaria = 639;
+        $fecha = '2024-06-20';
+        $descripcion = 'Mantenimiento preventivo';
+        $costopro = 250.50;
+        $idempleado = 1;
+        $estado = 1;
+        $tipo = 1;
 
+        // Llamar al método agregarMantenimiento() con los datos de prueba
+        $resultado = $this->mantenimiento->agregarMantenimiento($idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
+
+        // Verificar que la operación de agregar fue exitosa
+        $this->assertTrue($resultado);
+
+        // Opcional: Verificar que el mantenimiento realmente se agregó (puedes hacer una búsqueda por los datos agregados)
+        // Por ejemplo:
+        $mantenimientoAgregado = $this->mantenimiento->buscarMantenimiento($descripcion);
+
+        // Verificar que se encontró al menos un mantenimiento con la descripción dada
+        $this->assertNotEmpty($mantenimientoAgregado);
+    }
 
     // Test para verificar la operación de eliminar mantenimiento
+    public function testEliminarMantenimiento()
+    {
+        // Supongamos que queremos eliminar el mantenimiento con idmantenimiento = 1 (debe existir en la base de datos)
+        $idmantenimiento = 10;
+
+        // Llamar al método eliminarMantenimiento() con el id del mantenimiento a eliminar
+        $resultado = $this->mantenimiento->eliminarMantenimiento($idmantenimiento);
+
+        // Verificar que la operación de eliminar fue exitosa
+        $this->assertTrue($resultado);
+    }
 
     // Test para verificar la operación de editar mantenimiento
     public function testEditarMantenimiento()
@@ -86,6 +120,19 @@ class MantenimientoTest extends TestCase
     }
 
     // Test para verificar la operación de obtener mantenimiento por ID
+    public function testObtenerMantenimientoPorId()
+    {
+        // Supongamos que queremos obtener el mantenimiento con idmantenimiento = 1 (debe existir en la base de datos)
+        $idmantenimiento = 1;
+
+        // Llamar al método obtenerMantenimientoPorId() con el id del mantenimiento
+        $mantenimiento = $this->mantenimiento->obtenerMantenimientoPorId($idmantenimiento);
+
+        // Verificar que se obtuvo un mantenimiento válido
+        $this->assertNotNull($mantenimiento);
+        $this->assertEquals($idmantenimiento, $mantenimiento['idmantenimiento']);
+        // Puedes agregar más aserciones según los campos que esperas en el mantenimiento
+    }
 }
 
 ?>

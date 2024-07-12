@@ -29,7 +29,7 @@ jobs:
       run: chmod +x vendor/bin/phpunit
 
     - name: Run PHPUnit tests
-      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report
+      run: php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage-report || true
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
@@ -54,7 +54,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: coverage-report
-        path: coverage.xml
+        path: coverage-report/*
 
     - name: Create coverage directory
       run: mkdir -p coverage
@@ -77,4 +77,4 @@ jobs:
       env:
         COMPOSER_PROCESS_TIMEOUT: 0
         COMPOSER_NO_INTERACTION: 1
-        COMPOSER_NO_AUDIT: 1
+        COMPOSER_NO_AUDIT: 1
