@@ -60,7 +60,7 @@ jobs:
       run: mkdir -p coverage
 
     - name: List coverage directory
-      run: ls -R coverage
+      run: ls -R coverage-report
 
     - name: Deploy PHPUnit coverage report to GitHub Pages
       if: always()
@@ -68,7 +68,7 @@ jobs:
       with:
         personal_token: ${{ secrets.PAT_TOKEN }}
         publish_branch: unittests
-        publish_dir: coverage
+        publish_dir: coverage-report
         allow_empty_commit: false
         keep_files: false
         force_orphan: false
