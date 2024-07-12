@@ -1,6 +1,9 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use App\Model\Usuario;
+use mysqli;
+use mysqli_stmt;
+use mysqli_result;
 
 class UsuarioTest extends TestCase {
     private $usuario;
@@ -10,16 +13,11 @@ class UsuarioTest extends TestCase {
         // Mock the database connection
         $this->dbMock = $this->createMock(mysqli::class);
 
-        // Mock the Conectar class
-        $conectarMock = $this->getMockBuilder('DB\Conectar')
-                             ->setMethods(['conexion'])
-                             ->getMock();
-        $conectarMock->expects($this->any())
-                     ->method('conexion')
-                     ->willReturn($this->dbMock);
-
         // Inject the mock into the Usuario class
-        $this->usuario = new Usuario();
+        $this->usuario = $this->getMockBuilder(Usuario::class)
+                              ->setConstructorArgs([])
+                              ->onlyMethods(['__construct'])
+                              ->getMock();
         $this->usuario->db = $this->dbMock;
     }
 
