@@ -1,10 +1,10 @@
 <?php
-namespace Tests\DB;
+namespace Tests\UsuarioTest;
 
 use PHPUnit\Framework\TestCase;
 use DB\Conectar;
 
-class dbTest extends TestCase {
+class UsuarioTest extends TestCase {
     public function testConexion() {
         $conexion = Conectar::conexion();
         $this->assertInstanceOf(\mysqli::class, $conexion);
