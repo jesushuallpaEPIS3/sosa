@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace Model;
 
 class Calculadora {
     public function sumar($a, $b) {
