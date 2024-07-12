@@ -1,5 +1,5 @@
 <?php
-namespace Tests\DB;
+namespace Tests\MODEL;
 
 use PHPUnit\Framework\TestCase;
 use DB\Conectar;
