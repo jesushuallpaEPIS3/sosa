@@ -48,7 +48,6 @@ class ReservaTest extends TestCase {
         // Aquí puedes añadir más aserciones según lo que esperas en tus datos de prueba
     }
 
-    // Test para obtener reserva por ID
     public function testObtenerReservaPorId() {
         // Primero, asegúrate de tener un ID de reserva existente en tu base de datos para probar la obtención por ID
         $idReservaExistente = 7;
