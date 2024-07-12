@@ -54,7 +54,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: coverage-report
-        path: coverage-report/*
+        path: coverage.xml
 
     - name: Create coverage directory
       run: mkdir -p coverage
@@ -77,4 +77,4 @@ jobs:
       env:
         COMPOSER_PROCESS_TIMEOUT: 0
         COMPOSER_NO_INTERACTION: 1
-        COMPOSER_NO_AUDIT: 1
+        COMPOSER_NO_AUDIT: 1
