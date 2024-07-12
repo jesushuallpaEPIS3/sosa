@@ -5,7 +5,6 @@
             "DB\\": "src/DB/",
             "App\\Controller\\": "src/Controller/",
             "App\\Model\\": "src/Model/"
-            
         }
     },
     "autoload-dev": {
