@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/runner/work/sosa/sosa/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.3" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/home/runner/work/sosa/sosa/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#6">App\Controller\ClienteController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#7">App\Controller\ContratoController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#8">ClsCotice</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/EmpleadoController.php.html#6">App\Controller\EmpleadoController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#6">App\Controller\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#6">App\Controller\MantenimientoController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#6">App\Controller\MaquinariaController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#6">App\Controller\ReservaController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#7">App\Model\Cliente</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#4">App\Model\Contrato</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#6">App\Model\Cotizacion</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#4">App\Model\DetalleMaquinariaModel</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Empleado.php.html#4">App\Model\Empleado</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Lugar.php.html#6">App\Model\Lugar</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#5">App\Model\Mantenimiento</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#5">App\Model\Maquinaria</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#6">App\Model\Reserva</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Usuario.php.html#6">App\Model\Usuario</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#8">ClsCotice</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#5">App\Model\Maquinaria</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#6">App\Controller\MaquinariaController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#7">App\Model\Cliente</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#4">App\Model\Contrato</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#6">App\Model\Cotizacion</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#5">App\Model\Mantenimiento</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#6">App\Model\Reserva</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#7">App\Controller\ContratoController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#6">App\Controller\LoginController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#6">App\Controller\MantenimientoController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#6">App\Controller\ReservaController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#4">App\Model\DetalleMaquinariaModel</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="MODEL/Lugar.php.html#6">App\Model\Lugar</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="MODEL/Empleado.php.html#4">App\Model\Empleado</a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#10"><abbr title="App\Controller\ClienteController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#15"><abbr title="App\Controller\ClienteController::listarClienteAdmin">listarClienteAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#21"><abbr title="App\Controller\ClienteController::agregarClienteAdmin">agregarClienteAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#27"><abbr title="App\Controller\ClienteController::editarClienteAdmin">editarClienteAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#33"><abbr title="App\Controller\ClienteController::eliminarClienteAdmin">eliminarClienteAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#39"><abbr title="App\Controller\ClienteController::buscarClienteAdmin">buscarClienteAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ClienteController.php.html#45"><abbr title="App\Controller\ClienteController::mostrarFormularioEditar">mostrarFormularioEditar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#11"><abbr title="App\Controller\ContratoController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#15"><abbr title="App\Controller\ContratoController::listarContratoAdmin">listarContratoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#25"><abbr title="App\Controller\ContratoController::agregarContratoAdmin">agregarContratoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#34"><abbr title="App\Controller\ContratoController::editarContratoAdmin">editarContratoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#43"><abbr title="App\Controller\ContratoController::eliminarContratoAdmin">eliminarContratoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#54"><abbr title="App\Controller\ContratoController::buscarContratoAdmin">buscarContratoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#64"><abbr title="App\Controller\ContratoController::mostrarFormularioEditar">mostrarFormularioEditar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#9"><abbr title="ClsCotice::mostrarFormulario">mostrarFormulario</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#13"><abbr title="ClsCotice::validarDocumento">validarDocumento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#44"><abbr title="ClsCotice::procesarFormulario">procesarFormulario</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#81"><abbr title="ClsCotice::actualizarCotizacion">actualizarCotizacion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/EmpleadoController.php.html#10"><abbr title="App\Controller\EmpleadoController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/EmpleadoController.php.html#14"><abbr title="App\Controller\EmpleadoController::listarEmpleadosAdmin">listarEmpleadosAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#9"><abbr title="App\Controller\LoginController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#13"><abbr title="App\Controller\LoginController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#37"><abbr title="App\Controller\LoginController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#10"><abbr title="App\Controller\MantenimientoController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#14"><abbr title="App\Controller\MantenimientoController::listarMantenimientoAdmin">listarMantenimientoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#20"><abbr title="App\Controller\MantenimientoController::agregarMantenimientoAdmin">agregarMantenimientoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#25"><abbr title="App\Controller\MantenimientoController::editarMantenimientoAdmin">editarMantenimientoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#30"><abbr title="App\Controller\MantenimientoController::eliminarMantenimientoAdmin">eliminarMantenimientoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#38"><abbr title="App\Controller\MantenimientoController::buscarMantenimientoAdmin">buscarMantenimientoAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#44"><abbr title="App\Controller\MantenimientoController::mostrarFormularioEditar">mostrarFormularioEditar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#10"><abbr title="App\Controller\MaquinariaController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#15"><abbr title="App\Controller\MaquinariaController::catalogoMaquinaria">catalogoMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#26"><abbr title="App\Controller\MaquinariaController::detalleMaquinaria">detalleMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#40"><abbr title="App\Controller\MaquinariaController::listarMaquinariaAdmin">listarMaquinariaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#51"><abbr title="App\Controller\MaquinariaController::agregarMaquinariaAdmin">agregarMaquinariaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#61"><abbr title="App\Controller\MaquinariaController::eliminarMaquinariaAdmin">eliminarMaquinariaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#73"><abbr title="App\Controller\MaquinariaController::editarMaquinariaAdmin">editarMaquinariaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#83"><abbr title="App\Controller\MaquinariaController::buscarMaquinariaAdmin">buscarMaquinariaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#94"><abbr title="App\Controller\MaquinariaController::mostrarFormularioEditar">mostrarFormularioEditar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#10"><abbr title="App\Controller\ReservaController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#14"><abbr title="App\Controller\ReservaController::listarReservaAdmin">listarReservaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#20"><abbr title="App\Controller\ReservaController::agregarReservaAdmin">agregarReservaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#25"><abbr title="App\Controller\ReservaController::editarReservaAdmin">editarReservaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#30"><abbr title="App\Controller\ReservaController::eliminarReservaAdmin">eliminarReservaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#38"><abbr title="App\Controller\ReservaController::buscarReservaAdmin">buscarReservaAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#44"><abbr title="App\Controller\ReservaController::mostrarFormularioEditar">mostrarFormularioEditar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#10"><abbr title="App\Model\Cliente::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#14"><abbr title="App\Model\Cliente::listarClientes">listarClientes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#23"><abbr title="App\Model\Cliente::agregarCliente">agregarCliente</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#36"><abbr title="App\Model\Cliente::editarCliente">editarCliente</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#49"><abbr title="App\Model\Cliente::eliminarCliente">eliminarCliente</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#63"><abbr title="App\Model\Cliente::buscarCliente">buscarCliente</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#78"><abbr title="App\Model\Cliente::obtenerClientePorId">obtenerClientePorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#7"><abbr title="App\Model\Contrato::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#11"><abbr title="App\Model\Contrato::listarContrato">listarContrato</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#25"><abbr title="App\Model\Contrato::agregarContrato">agregarContrato</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#33"><abbr title="App\Model\Contrato::editarContrato">editarContrato</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#41"><abbr title="App\Model\Contrato::eliminarContrato">eliminarContrato</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#57"><abbr title="App\Model\Contrato::buscarContrato">buscarContrato</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#74"><abbr title="App\Model\Contrato::obtenerContratoPorId">obtenerContratoPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#9"><abbr title="App\Model\Cotizacion::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#13"><abbr title="App\Model\Cotizacion::actualizarCotizacion">actualizarCotizacion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#26"><abbr title="App\Model\Cotizacion::obtenerClientePorId">obtenerClientePorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#40"><abbr title="App\Model\Cotizacion::obtenerMaquinariaPorId">obtenerMaquinariaPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#53"><abbr title="App\Model\Cotizacion::obtenerLugarPorId">obtenerLugarPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#69"><abbr title="App\Model\Cotizacion::agregarCotizacion">agregarCotizacion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#86"><abbr title="App\Model\Cotizacion::obtenerTodasMaquinarias">obtenerTodasMaquinarias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#103"><abbr title="App\Model\Cotizacion::obtenerTodosLugares">obtenerTodosLugares</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#7"><abbr title="App\Model\DetalleMaquinariaModel::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#11"><abbr title="App\Model\DetalleMaquinariaModel::listarDetalleMaquinaria">listarDetalleMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#23"><abbr title="App\Model\DetalleMaquinariaModel::obtenerDetallePorId">obtenerDetallePorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#34"><abbr title="App\Model\DetalleMaquinariaModel::actualizarDetalle">actualizarDetalle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#47"><abbr title="App\Model\DetalleMaquinariaModel::eliminarDetalle">eliminarDetalle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Empleado.php.html#7"><abbr title="App\Model\Empleado::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Empleado.php.html#11"><abbr title="App\Model\Empleado::listarEmpleados">listarEmpleados</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Lugar.php.html#9"><abbr title="App\Model\Lugar::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Lugar.php.html#13"><abbr title="App\Model\Lugar::obtenerTodosLugares">obtenerTodosLugares</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#8"><abbr title="App\Model\Mantenimiento::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#13"><abbr title="App\Model\Mantenimiento::listarMantenimiento">listarMantenimiento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#23"><abbr title="App\Model\Mantenimiento::agregarMantenimiento">agregarMantenimiento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#36"><abbr title="App\Model\Mantenimiento::eliminarMantenimiento">eliminarMantenimiento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#52"><abbr title="App\Model\Mantenimiento::editarMantenimiento">editarMantenimiento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#65"><abbr title="App\Model\Mantenimiento::buscarMantenimiento">buscarMantenimiento</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#81"><abbr title="App\Model\Mantenimiento::obtenerMantenimientoPorId">obtenerMantenimientoPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#8"><abbr title="App\Model\Maquinaria::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#14"><abbr title="App\Model\Maquinaria::listar_Maquinarias">listar_Maquinarias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#29"><abbr title="App\Model\Maquinaria::mostrar_Maquinaria">mostrar_Maquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#49"><abbr title="App\Model\Maquinaria::listarMaquinarias">listarMaquinarias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#58"><abbr title="App\Model\Maquinaria::agregarMaquinaria">agregarMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#79"><abbr title="App\Model\Maquinaria::eliminarMaquinaria">eliminarMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#91"><abbr title="App\Model\Maquinaria::editarMaquinaria">editarMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#103"><abbr title="App\Model\Maquinaria::buscarMaquinaria">buscarMaquinaria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#118"><abbr title="App\Model\Maquinaria::buscarMaquinariaPorId">buscarMaquinariaPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#9"><abbr title="App\Model\Reserva::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#14"><abbr title="App\Model\Reserva::listarReserva">listarReserva</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#24"><abbr title="App\Model\Reserva::agregarReserva">agregarReserva</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#38"><abbr title="App\Model\Reserva::eliminarReserva">eliminarReserva</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#52"><abbr title="App\Model\Reserva::editarReserva">editarReserva</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#65"><abbr title="App\Model\Reserva::buscarReserva">buscarReserva</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#81"><abbr title="App\Model\Reserva::obtenerReservaPorId">obtenerReservaPorId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Usuario.php.html#9"><abbr title="App\Model\Usuario::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MODEL/Usuario.php.html#13"><abbr title="App\Model\Usuario::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#13"><abbr title="ClsCotice::validarDocumento">validarDocumento</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#13"><abbr title="App\Controller\LoginController::login">login</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#44"><abbr title="ClsCotice::procesarFormulario">procesarFormulario</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MODEL/Lugar.php.html#13"><abbr title="App\Model\Lugar::obtenerTodosLugares">obtenerTodosLugares</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#11"><abbr title="App\Model\Contrato::listarContrato">listarContrato</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MODEL/DetalleMaquinariaModel.php.html#11"><abbr title="App\Model\DetalleMaquinariaModel::listarDetalleMaquinaria">listarDetalleMaquinaria</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CONTROLLER/ContratoController.php.html#43"><abbr title="App\Controller\ContratoController::eliminarContratoAdmin">eliminarContratoAdmin</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/CoticeController.php.html#81"><abbr title="ClsCotice::actualizarCotizacion">actualizarCotizacion</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/LoginController.php.html#9"><abbr title="App\Controller\LoginController::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/MantenimientoController.php.html#30"><abbr title="App\Controller\MantenimientoController::eliminarMantenimientoAdmin">eliminarMantenimientoAdmin</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#26"><abbr title="App\Controller\MaquinariaController::detalleMaquinaria">detalleMaquinaria</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/MaquinariaController.php.html#61"><abbr title="App\Controller\MaquinariaController::eliminarMaquinariaAdmin">eliminarMaquinariaAdmin</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CONTROLLER/ReservaController.php.html#30"><abbr title="App\Controller\ReservaController::eliminarReservaAdmin">eliminarReservaAdmin</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#14"><abbr title="App\Model\Cliente::listarClientes">listarClientes</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#23"><abbr title="App\Model\Cliente::agregarCliente">agregarCliente</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#36"><abbr title="App\Model\Cliente::editarCliente">editarCliente</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cliente.php.html#63"><abbr title="App\Model\Cliente::buscarCliente">buscarCliente</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#41"><abbr title="App\Model\Contrato::eliminarContrato">eliminarContrato</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Contrato.php.html#57"><abbr title="App\Model\Contrato::buscarContrato">buscarContrato</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#86"><abbr title="App\Model\Cotizacion::obtenerTodasMaquinarias">obtenerTodasMaquinarias</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Cotizacion.php.html#103"><abbr title="App\Model\Cotizacion::obtenerTodosLugares">obtenerTodosLugares</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Empleado.php.html#11"><abbr title="App\Model\Empleado::listarEmpleados">listarEmpleados</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#13"><abbr title="App\Model\Mantenimiento::listarMantenimiento">listarMantenimiento</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Mantenimiento.php.html#65"><abbr title="App\Model\Mantenimiento::buscarMantenimiento">buscarMantenimiento</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#14"><abbr title="App\Model\Maquinaria::listar_Maquinarias">listar_Maquinarias</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#49"><abbr title="App\Model\Maquinaria::listarMaquinarias">listarMaquinarias</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Maquinaria.php.html#103"><abbr title="App\Model\Maquinaria::buscarMaquinaria">buscarMaquinaria</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#14"><abbr title="App\Model\Reserva::listarReserva">listarReserva</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MODEL/Reserva.php.html#65"><abbr title="App\Model\Reserva::buscarReserva">buscarReserva</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.3</a> using <a href="https://www.php.net/" target="_top">PHP 8.2.21</a> and <a href="https://phpunit.de/">PHPUnit 11.2.2</a> at Fri Jul 12 16:25:25 UTC 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.3" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([18,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([102,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,7,"<a href=\"CONTROLLER\/ClienteController.php.html#6\">App\\Controller\\ClienteController<\/a>"],[0,8,"<a href=\"CONTROLLER\/ContratoController.php.html#7\">App\\Controller\\ContratoController<\/a>"],[0,21,"<a href=\"CONTROLLER\/CoticeController.php.html#8\">ClsCotice<\/a>"],[0,2,"<a href=\"CONTROLLER\/EmpleadoController.php.html#6\">App\\Controller\\EmpleadoController<\/a>"],[0,8,"<a href=\"CONTROLLER\/LoginController.php.html#6\">App\\Controller\\LoginController<\/a>"],[0,8,"<a href=\"CONTROLLER\/MantenimientoController.php.html#6\">App\\Controller\\MantenimientoController<\/a>"],[0,11,"<a href=\"CONTROLLER\/MaquinariaController.php.html#6\">App\\Controller\\MaquinariaController<\/a>"],[0,8,"<a href=\"CONTROLLER\/ReservaController.php.html#6\">App\\Controller\\ReservaController<\/a>"],[100,1,"<a href=\"DB\/Conectar.php.html#6\">DB\\Conectar<\/a>"],[0,11,"<a href=\"MODEL\/Cliente.php.html#7\">App\\Model\\Cliente<\/a>"],[0,11,"<a href=\"MODEL\/Contrato.php.html#4\">App\\Model\\Contrato<\/a>"],[0,10,"<a href=\"MODEL\/Cotizacion.php.html#6\">App\\Model\\Cotizacion<\/a>"],[0,7,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#4\">App\\Model\\DetalleMaquinariaModel<\/a>"],[0,3,"<a href=\"MODEL\/Empleado.php.html#4\">App\\Model\\Empleado<\/a>"],[0,5,"<a href=\"MODEL\/Lugar.php.html#6\">App\\Model\\Lugar<\/a>"],[0,9,"<a href=\"MODEL\/Mantenimiento.php.html#5\">App\\Model\\Mantenimiento<\/a>"],[0,12,"<a href=\"MODEL\/Maquinaria.php.html#5\">App\\Model\\Maquinaria<\/a>"],[0,9,"<a href=\"MODEL\/Reserva.php.html#6\">App\\Model\\Reserva<\/a>"],[0,2,"<a href=\"MODEL\/Usuario.php.html#6\">App\\Model\\Usuario<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#10\">App\\Controller\\ClienteController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#15\">App\\Controller\\ClienteController::listarClienteAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#21\">App\\Controller\\ClienteController::agregarClienteAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#27\">App\\Controller\\ClienteController::editarClienteAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#33\">App\\Controller\\ClienteController::eliminarClienteAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#39\">App\\Controller\\ClienteController::buscarClienteAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ClienteController.php.html#45\">App\\Controller\\ClienteController::mostrarFormularioEditar<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#11\">App\\Controller\\ContratoController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#15\">App\\Controller\\ContratoController::listarContratoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#25\">App\\Controller\\ContratoController::agregarContratoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#34\">App\\Controller\\ContratoController::editarContratoAdmin<\/a>"],[0,2,"<a href=\"CONTROLLER\/ContratoController.php.html#43\">App\\Controller\\ContratoController::eliminarContratoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#54\">App\\Controller\\ContratoController::buscarContratoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ContratoController.php.html#64\">App\\Controller\\ContratoController::mostrarFormularioEditar<\/a>"],[0,1,"<a href=\"CONTROLLER\/CoticeController.php.html#9\">ClsCotice::mostrarFormulario<\/a>"],[0,14,"<a href=\"CONTROLLER\/CoticeController.php.html#13\">ClsCotice::validarDocumento<\/a>"],[0,4,"<a href=\"CONTROLLER\/CoticeController.php.html#44\">ClsCotice::procesarFormulario<\/a>"],[0,2,"<a href=\"CONTROLLER\/CoticeController.php.html#81\">ClsCotice::actualizarCotizacion<\/a>"],[0,1,"<a href=\"CONTROLLER\/EmpleadoController.php.html#10\">App\\Controller\\EmpleadoController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/EmpleadoController.php.html#14\">App\\Controller\\EmpleadoController::listarEmpleadosAdmin<\/a>"],[0,2,"<a href=\"CONTROLLER\/LoginController.php.html#9\">App\\Controller\\LoginController::__construct<\/a>"],[0,5,"<a href=\"CONTROLLER\/LoginController.php.html#13\">App\\Controller\\LoginController::login<\/a>"],[0,1,"<a href=\"CONTROLLER\/LoginController.php.html#37\">App\\Controller\\LoginController::logout<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#10\">App\\Controller\\MantenimientoController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#14\">App\\Controller\\MantenimientoController::listarMantenimientoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#20\">App\\Controller\\MantenimientoController::agregarMantenimientoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#25\">App\\Controller\\MantenimientoController::editarMantenimientoAdmin<\/a>"],[0,2,"<a href=\"CONTROLLER\/MantenimientoController.php.html#30\">App\\Controller\\MantenimientoController::eliminarMantenimientoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#38\">App\\Controller\\MantenimientoController::buscarMantenimientoAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MantenimientoController.php.html#44\">App\\Controller\\MantenimientoController::mostrarFormularioEditar<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#10\">App\\Controller\\MaquinariaController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#15\">App\\Controller\\MaquinariaController::catalogoMaquinaria<\/a>"],[0,2,"<a href=\"CONTROLLER\/MaquinariaController.php.html#26\">App\\Controller\\MaquinariaController::detalleMaquinaria<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#40\">App\\Controller\\MaquinariaController::listarMaquinariaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#51\">App\\Controller\\MaquinariaController::agregarMaquinariaAdmin<\/a>"],[0,2,"<a href=\"CONTROLLER\/MaquinariaController.php.html#61\">App\\Controller\\MaquinariaController::eliminarMaquinariaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#73\">App\\Controller\\MaquinariaController::editarMaquinariaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#83\">App\\Controller\\MaquinariaController::buscarMaquinariaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/MaquinariaController.php.html#94\">App\\Controller\\MaquinariaController::mostrarFormularioEditar<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#10\">App\\Controller\\ReservaController::__construct<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#14\">App\\Controller\\ReservaController::listarReservaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#20\">App\\Controller\\ReservaController::agregarReservaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#25\">App\\Controller\\ReservaController::editarReservaAdmin<\/a>"],[0,2,"<a href=\"CONTROLLER\/ReservaController.php.html#30\">App\\Controller\\ReservaController::eliminarReservaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#38\">App\\Controller\\ReservaController::buscarReservaAdmin<\/a>"],[0,1,"<a href=\"CONTROLLER\/ReservaController.php.html#44\">App\\Controller\\ReservaController::mostrarFormularioEditar<\/a>"],[100,1,"<a href=\"DB\/Conectar.php.html#7\">DB\\Conectar::conexion<\/a>"],[0,1,"<a href=\"MODEL\/Cliente.php.html#10\">App\\Model\\Cliente::__construct<\/a>"],[0,2,"<a href=\"MODEL\/Cliente.php.html#14\">App\\Model\\Cliente::listarClientes<\/a>"],[0,2,"<a href=\"MODEL\/Cliente.php.html#23\">App\\Model\\Cliente::agregarCliente<\/a>"],[0,2,"<a href=\"MODEL\/Cliente.php.html#36\">App\\Model\\Cliente::editarCliente<\/a>"],[0,1,"<a href=\"MODEL\/Cliente.php.html#49\">App\\Model\\Cliente::eliminarCliente<\/a>"],[0,2,"<a href=\"MODEL\/Cliente.php.html#63\">App\\Model\\Cliente::buscarCliente<\/a>"],[0,1,"<a href=\"MODEL\/Cliente.php.html#78\">App\\Model\\Cliente::obtenerClientePorId<\/a>"],[0,1,"<a href=\"MODEL\/Contrato.php.html#7\">App\\Model\\Contrato::__construct<\/a>"],[0,3,"<a href=\"MODEL\/Contrato.php.html#11\">App\\Model\\Contrato::listarContrato<\/a>"],[0,1,"<a href=\"MODEL\/Contrato.php.html#25\">App\\Model\\Contrato::agregarContrato<\/a>"],[0,1,"<a href=\"MODEL\/Contrato.php.html#33\">App\\Model\\Contrato::editarContrato<\/a>"],[0,2,"<a href=\"MODEL\/Contrato.php.html#41\">App\\Model\\Contrato::eliminarContrato<\/a>"],[0,2,"<a href=\"MODEL\/Contrato.php.html#57\">App\\Model\\Contrato::buscarContrato<\/a>"],[0,1,"<a href=\"MODEL\/Contrato.php.html#74\">App\\Model\\Contrato::obtenerContratoPorId<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#9\">App\\Model\\Cotizacion::__construct<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#13\">App\\Model\\Cotizacion::actualizarCotizacion<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#26\">App\\Model\\Cotizacion::obtenerClientePorId<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#40\">App\\Model\\Cotizacion::obtenerMaquinariaPorId<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#53\">App\\Model\\Cotizacion::obtenerLugarPorId<\/a>"],[0,1,"<a href=\"MODEL\/Cotizacion.php.html#69\">App\\Model\\Cotizacion::agregarCotizacion<\/a>"],[0,2,"<a href=\"MODEL\/Cotizacion.php.html#86\">App\\Model\\Cotizacion::obtenerTodasMaquinarias<\/a>"],[0,2,"<a href=\"MODEL\/Cotizacion.php.html#103\">App\\Model\\Cotizacion::obtenerTodosLugares<\/a>"],[0,1,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#7\">App\\Model\\DetalleMaquinariaModel::__construct<\/a>"],[0,3,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#11\">App\\Model\\DetalleMaquinariaModel::listarDetalleMaquinaria<\/a>"],[0,1,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#23\">App\\Model\\DetalleMaquinariaModel::obtenerDetallePorId<\/a>"],[0,1,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#34\">App\\Model\\DetalleMaquinariaModel::actualizarDetalle<\/a>"],[0,1,"<a href=\"MODEL\/DetalleMaquinariaModel.php.html#47\">App\\Model\\DetalleMaquinariaModel::eliminarDetalle<\/a>"],[0,1,"<a href=\"MODEL\/Empleado.php.html#7\">App\\Model\\Empleado::__construct<\/a>"],[0,2,"<a href=\"MODEL\/Empleado.php.html#11\">App\\Model\\Empleado::listarEmpleados<\/a>"],[0,1,"<a href=\"MODEL\/Lugar.php.html#9\">App\\Model\\Lugar::__construct<\/a>"],[0,4,"<a href=\"MODEL\/Lugar.php.html#13\">App\\Model\\Lugar::obtenerTodosLugares<\/a>"],[0,1,"<a href=\"MODEL\/Mantenimiento.php.html#8\">App\\Model\\Mantenimiento::__construct<\/a>"],[0,2,"<a href=\"MODEL\/Mantenimiento.php.html#13\">App\\Model\\Mantenimiento::listarMantenimiento<\/a>"],[0,1,"<a href=\"MODEL\/Mantenimiento.php.html#23\">App\\Model\\Mantenimiento::agregarMantenimiento<\/a>"],[0,1,"<a href=\"MODEL\/Mantenimiento.php.html#36\">App\\Model\\Mantenimiento::eliminarMantenimiento<\/a>"],[0,1,"<a href=\"MODEL\/Mantenimiento.php.html#52\">App\\Model\\Mantenimiento::editarMantenimiento<\/a>"],[0,2,"<a href=\"MODEL\/Mantenimiento.php.html#65\">App\\Model\\Mantenimiento::buscarMantenimiento<\/a>"],[0,1,"<a href=\"MODEL\/Mantenimiento.php.html#81\">App\\Model\\Mantenimiento::obtenerMantenimientoPorId<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#8\">App\\Model\\Maquinaria::__construct<\/a>"],[0,2,"<a href=\"MODEL\/Maquinaria.php.html#14\">App\\Model\\Maquinaria::listar_Maquinarias<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#29\">App\\Model\\Maquinaria::mostrar_Maquinaria<\/a>"],[0,2,"<a href=\"MODEL\/Maquinaria.php.html#49\">App\\Model\\Maquinaria::listarMaquinarias<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#58\">App\\Model\\Maquinaria::agregarMaquinaria<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#79\">App\\Model\\Maquinaria::eliminarMaquinaria<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#91\">App\\Model\\Maquinaria::editarMaquinaria<\/a>"],[0,2,"<a href=\"MODEL\/Maquinaria.php.html#103\">App\\Model\\Maquinaria::buscarMaquinaria<\/a>"],[0,1,"<a href=\"MODEL\/Maquinaria.php.html#118\">App\\Model\\Maquinaria::buscarMaquinariaPorId<\/a>"],[0,1,"<a href=\"MODEL\/Reserva.php.html#9\">App\\Model\\Reserva::__construct<\/a>"],[0,2,"<a href=\"MODEL\/Reserva.php.html#14\">App\\Model\\Reserva::listarReserva<\/a>"],[0,1,"<a href=\"MODEL\/Reserva.php.html#24\">App\\Model\\Reserva::agregarReserva<\/a>"],[0,1,"<a href=\"MODEL\/Reserva.php.html#38\">App\\Model\\Reserva::eliminarReserva<\/a>"],[0,1,"<a href=\"MODEL\/Reserva.php.html#52\">App\\Model\\Reserva::editarReserva<\/a>"],[0,2,"<a href=\"MODEL\/Reserva.php.html#65\">App\\Model\\Reserva::buscarReserva<\/a>"],[0,1,"<a href=\"MODEL\/Reserva.php.html#81\">App\\Model\\Reserva::obtenerReservaPorId<\/a>"],[0,1,"<a href=\"MODEL\/Usuario.php.html#9\">App\\Model\\Usuario::__construct<\/a>"],[0,1,"<a href=\"MODEL\/Usuario.php.html#13\">App\\Model\\Usuario::login<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
