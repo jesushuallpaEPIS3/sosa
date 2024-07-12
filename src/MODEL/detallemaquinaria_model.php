@@ -48,32 +48,6 @@ class clsDetalleMaquinariaModel {
             }
         }
     
-        // Manejo del modelo 3D (carpeta)
-        if (!empty($_FILES['modelo3d']) && $_FILES['modelo3d']['error'] == UPLOAD_ERR_OK) {
-            $zipFile = $_FILES['modelo3d']['tmp_name'];
-            $zip = new ZipArchive;
-    
-            if ($zip->open($zipFile) === TRUE) {
-                $uniqueFolderName = uniqid('modelo3d_', true);
-                $folderPath = __DIR__ . "/../IMAGENES/MODELOS3D/" . $uniqueFolderName;
-    
-                if (!file_exists($folderPath)) {
-                    mkdir($folderPath, 0777, true);
-                }
-    
-                // Extraer archivos manteniendo la estructura interna del ZIP
-                $zip->extractTo($folderPath);
-                $zip->close();
-    
-                // Actualizar la base de datos con el nombre de la carpeta
-                $updates[] = "modelo3d = '$uniqueFolderName'";
-    
-                echo "Modelo 3D subido y descomprimido correctamente.";
-            } else {
-                echo "Error al abrir el archivo ZIP";
-            }
-        }
-    
         // Actualizar otros campos en la base de datos
         $updates[] = "idmaquinaria = '$idmaquinaria'";
         $updates[] = "descripcion = '$descripcion'";
