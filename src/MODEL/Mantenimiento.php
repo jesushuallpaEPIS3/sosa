@@ -1,4 +1,7 @@
 <?php
+namespace App\Model;
+
+use DB\Conectar;
 class Mantenimiento {
     private $db;
 
@@ -25,9 +28,7 @@ class Mantenimiento {
             $stmt->execute();
             $stmt->close();
             return true;
-        } catch (Exception $e) {
-            echo "Error al agregar el mantenimiento: " . $e->getMessage();
-            return false;
+        } finally {
         }
     }
 
@@ -36,18 +37,14 @@ class Mantenimiento {
         try {
             $sql = "DELETE FROM tbmantenimiento WHERE idmantenimiento = ?";
             $stmt = $this->db->prepare($sql);
-            if (!$stmt) {
-                throw new Exception("Error en la preparación de la consulta: " . $this->db->error);
-            }
+        
             $stmt->bind_param("i", $idmantenimiento);
             $stmt->execute();
             
             $resultado = $stmt->affected_rows > 0;
             $stmt->close();
             return $resultado;
-        } catch (Exception $e) {
-            echo "Error al eliminar el mantenimiento: " . $e->getMessage();
-            return false;
+        } finally {
         }
     }
 
@@ -60,9 +57,7 @@ class Mantenimiento {
             $stmt->execute();
             $stmt->close();
             return true;
-        } catch (Exception $e) {
-            echo "Error al editar el mantenimiento: " . $e->getMessage();
-            return false;
+        } finally {
         }
     }
 

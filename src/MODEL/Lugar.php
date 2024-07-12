@@ -25,9 +25,7 @@ class Lugar {
             }
 
             return $lugares;
-        } catch (Exception $e) {
-            echo "Error al obtener los lugares: " . $e->getMessage();
-            return false;
+        } finally {
         }
     }
 }

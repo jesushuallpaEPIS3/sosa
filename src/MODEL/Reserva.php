@@ -25,15 +25,14 @@ class Reserva {
         try {
             $sql = "INSERT INTO tbreserva (idcliente, idmaquinaria, idcotize, idempleado, fechareserva, fechainicio, fechafin, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->db->prepare($sql);
-            $stmt->bind_param("iiiiisss", $idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
+            $stmt->bind_param("iiiissss", $idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
             $stmt->execute();
             $stmt->close();
             return true;
-        } catch (\Exception $e) {
-            echo "Error al agregar la reserva: " . $e->getMessage();
-            return false;
+        } finally {	
         }
     }
+    
 
     // Eliminar una reserva
     public function eliminarReserva($idreserva) {
@@ -45,9 +44,7 @@ class Reserva {
             $resultado = $stmt->affected_rows > 0;
             $stmt->close();
             return $resultado;
-        } catch (\Exception $e) {
-            echo "Error al eliminar la reserva: " . $e->getMessage();
-            return false;
+        } finally {	
         }
     }
 
@@ -60,9 +57,7 @@ class Reserva {
             $stmt->execute();
             $stmt->close();
             return true;
-        } catch (\Exception $e) {
-            echo "Error al editar la reserva: " . $e->getMessage();
-            return false;
+        } finally {	
         }
     }
 

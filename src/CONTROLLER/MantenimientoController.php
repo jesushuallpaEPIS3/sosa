@@ -1,49 +1,50 @@
 <?php
-class clsMantenimiento {
+namespace App\Controller;
+
+use App\Model\Mantenimiento;
+
+class MantenimientoController {
+
+    private $modeloMantenimiento;
+
+    public function __construct(Mantenimiento $modeloMantenimiento) {
+        $this->modeloMantenimiento = $modeloMantenimiento;
+    }
+
     public function listarMantenimientoAdmin() {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $datos = $mant->listarMantenimiento();
-        require_once("VIEW/MANTENIMIENTO/index.php");
+        $datos = $this->modeloMantenimiento->listarMantenimiento();
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 
     public function agregarMantenimientoAdmin($idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo) {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $mant->agregarMantenimiento($idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
+        $this->modeloMantenimiento->agregarMantenimiento($idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
+        // Aquí podrías manejar la lógica de redireccionamiento o respuesta según necesites
     }
 
     public function editarMantenimientoAdmin($idmantenimiento, $idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo) {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $mant->editarMantenimiento($idmantenimiento, $idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
+        $this->modeloMantenimiento->editarMantenimiento($idmantenimiento, $idmaquinaria, $fecha, $descripcion, $costopro, $idempleado, $estado, $tipo);
+        // Aquí podrías manejar la lógica de redireccionamiento o respuesta según necesites
     }
 
     public function eliminarMantenimientoAdmin($idmantenimiento) {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $resultado = $mant->eliminarMantenimiento($idmantenimiento);
-
+        $resultado = $this->modeloMantenimiento->eliminarMantenimiento($idmantenimiento);
         if ($resultado) {
-            header("Location: admin.php?action=listarMantenimiento");
-        } else {
-            echo "Error al eliminar el mantenimiento.";
-        }
-        exit();
+            // Idealmente se manejaría el redireccionamiento desde el controlador que llama a este método
+            return true;
+        } 
     }
 
     public function buscarMantenimientoAdmin($termino) {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $datos = $mant->buscarMantenimiento($termino);
-        require_once("VIEW/MANTENIMIENTO/index.php");
+        $datos = $this->modeloMantenimiento->buscarMantenimiento($termino);
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 
     public function mostrarFormularioEditar($idmantenimiento) {
-        require_once("MODEL/Mantenimiento.php");
-        $mant = new Mantenimiento();
-        $datos = $mant->obtenerMantenimientoPorId($idmantenimiento);
-        require_once("VIEW/MANTENIMIENTO/editar.php");
+        $datos = $this->modeloMantenimiento->obtenerMantenimientoPorId($idmantenimiento);
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 }
 ?>

@@ -1,12 +1,22 @@
 <?php
-class clsEmpleado {
-    public function listarEmpleadosAdmin() {
-        require_once("MODEL/Empleado.php");
-        $emp = new Empleado();
-        $datos = $emp->listarEmpleados();
-        require_once("VIEW/EMPLEADO/index.php");
+namespace App\Controller;
+
+use App\Model\Empleado;
+
+class EmpleadoController {
+
+    private $empleadoModel;
+
+    public function __construct(Empleado $empleadoModel) {
+        $this->empleadoModel = $empleadoModel;
     }
 
-    // Otros métodos para agregar, editar, eliminar y buscar empleados
+    public function listarEmpleadosAdmin() {
+        $empleados = $this->empleadoModel->listarEmpleados();
+        // Aquí podrías retornar o pasar los datos a una vista
+        return $empleados;
+    }
+
+    // Otros métodos del controlador
 }
 ?>

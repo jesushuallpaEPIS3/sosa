@@ -1,109 +1,104 @@
 <?php
-Class clsMaquinaria{
-    //VISTA CLIENTE
-    public static function catalogoMaquinaria(){
+namespace App\Controller;
+
+use App\Model\Maquinaria;
+
+class MaquinariaController {
+
+    private $modeloMaquinaria;
+
+    public function __construct(Maquinaria $modeloMaquinaria) {
+        $this->modeloMaquinaria = $modeloMaquinaria;
+    }
+
+    // VISTA CLIENTE
+    public function catalogoMaquinaria() {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $datos = $maq->listar_maquinarias();
-            require_once("VIEW/CATALOGO/catalogoMaquinaria.php");
-        } catch (Exception $e) {
-            // Manejo de errores
-            echo "Error: " . $e->getMessage();
+            $datos = $this->modeloMaquinaria->listarMaquinarias();
+            // Aquí normalmente se devolverían los datos o se pasarían a una vista
+            return $datos;
+        } finally {
+            // Puedes agregar lógica adicional aquí si es necesario
         }
     }
 
     // Funcion del controlador para mostrar detalles de una maquinaria cuando se le haga click
-    public static function detalleMaquinaria() {
-        $idmaquinaria = $_GET['idmaquinaria'];
-        echo "id en controlador: ";
-        echo $idmaquinaria;
+    public function detalleMaquinaria($idmaquinaria) {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $fila = $maq->mostrar_Maquinaria($idmaquinaria);
-            require_once("VIEW/CATALOGO/detalleMaquinaria.php");
+            $fila = $this->modeloMaquinaria->mostrar_Maquinaria($idmaquinaria);
+            return $fila;
         } catch (Exception $e) {
-            // Manejo de errores
-            echo "Error: " . $e->getMessage();
-        }
-    }
-    //VISTA ADMINISTRADOR
-    // Función para listar maquinaria en la interfaz del administrador
-    public static function listarMaquinariaAdmin() {
-        try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria(); // Asegúrate de usar el nombre correcto de la clase del modelo
-            $datos = $maq->listarMaquinarias(); // Corregido: llama al método listar_Maquinarias
-            require_once("VIEW/MAQUINARIA/index.php"); // Asegúrate de tener una vista adecuada para listar la maquinaria en la interfaz del administrador
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
-    //funcion para agregar maquinaria 
-    public static function agregarMaquinariaAdmin($numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal) {
-        try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $maq->agregarMaquinaria($numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal);
-            echo "Maquinaria agregada correctamente.";
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            // Manejo de excepciones si es necesario
+            throw $e;
         }
     }
     
-    // Eliminar maquinaria
+
+    // VISTA ADMINISTRADOR
+
+    // Función para listar maquinaria en la interfaz del administrador
+    public function listarMaquinariaAdmin() {
+        try {
+            $datos = $this->modeloMaquinaria->listarMaquinarias();
+            // Aquí normalmente se devolverían los datos o se pasarían a una vista
+            return $datos;
+        } finally {
+            
+        }
+    }
+
+    // Función para agregar maquinaria
+    public function agregarMaquinariaAdmin($numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal) {
+        try {
+            $this->modeloMaquinaria->agregarMaquinaria($numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal);
+            echo "Maquinaria agregada correctamente.";
+        } finally {
+            
+        }
+    }
+
+    // Función para eliminar maquinaria
     public function eliminarMaquinariaAdmin($id) {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $resultado = $maq->eliminarMaquinaria($id);
+            $resultado = $this->modeloMaquinaria->eliminarMaquinaria($id);
             if ($resultado) {
                 echo "Maquinaria eliminada correctamente.";
-            } else {
-                echo "Error: No se encontró maquinaria con ese ID.";
-            }
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            } 
+        } finally {
+            
         }
     }
 
     // Función para editar maquinaria
-    public static function editarMaquinariaAdmin($id, $numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal) {
+    public function editarMaquinariaAdmin($id, $numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal) {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $maq->editarMaquinaria($id, $numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal);
+            $this->modeloMaquinaria->editarMaquinaria($id, $numserie, $nombre, $marca, $modelo, $costoh, $imagenprincipal);
             echo "Maquinaria editada correctamente.";
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+        } finally {
+            
         }
     }
+
     // Función para buscar maquinaria
-    public static function buscarMaquinariaAdmin($termino) {
+    public function buscarMaquinariaAdmin($termino) {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $resultados = $maq->buscarMaquinaria($termino);
-            $datos = $resultados;
-            require_once("VIEW/MAQUINARIA/index.php");
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            $resultados = $this->modeloMaquinaria->buscarMaquinaria($termino);
+            // Aquí normalmente se devolverían los datos o se pasarían a una vista
+            return $resultados;
+        } finally {
+            
         }
     }
-    
 
-    public static function mostrarFormularioEditar($id) {
+    // Función para mostrar formulario de edición de maquinaria
+    public function mostrarFormularioEditar($id) {
         try {
-            require_once("MODEL/Maquinaria.php");
-            $maq = new Maquinaria();
-            $maquinaria = $maq->buscarMaquinariaPorId($id);
-            require_once("VIEW/MAQUINARIA/editar.php");
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            $maquinaria = $this->modeloMaquinaria->buscarMaquinariaPorId($id);
+            // Aquí normalmente se devolverían los datos o se pasarían a una vista
+            return $maquinaria;
+        } finally {
+
         }
     }
-    
 }
-
 ?>

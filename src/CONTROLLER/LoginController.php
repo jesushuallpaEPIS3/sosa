@@ -1,32 +1,37 @@
 <?php
-require_once("MODEL/Usuario.php");
+namespace App\Controller;
+
+use App\Model\Usuario;
 
 class LoginController {
     private $model;
 
-    public function __construct() {
-        $this->model = new Usuario();
+    public function __construct(Usuario $model = null) {
+        $this->model = $model ?: new Usuario();
     }
 
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $user = $this->model->login($username, $password);
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
 
-            if ($user) {
-                session_start();
-                $_SESSION['user'] = $user;
-                $_SESSION['autenticado'] = 'SI';
-                header("Location: login.php?action=panelAdmin");
-                exit();
+            if (!empty($username) && !empty($password)) {
+                $user = $this->model->login($username, $password);
+
+                if ($user) {
+                    session_start();
+                    $_SESSION['user'] = $user;
+                    $_SESSION['autenticado'] = 'SI';
+                    header("Location: login.php?action=panelAdmin");
+                    exit();
+                } else {
+                    return "Nombre de usuario o contraseña incorrectos";
+                }
             } else {
-                $error = "Nombre de usuario o contraseña incorrectos";
-                require_once("VIEW/login.php");
+                return "Por favor ingrese nombre de usuario y contraseña";
             }
-        } else {
-            require_once("VIEW/login.php");
         }
+        // No debe haber salida directa aquí
     }
 
     public function logout() {

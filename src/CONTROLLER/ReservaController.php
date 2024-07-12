@@ -1,49 +1,50 @@
 <?php
-class clsReserva {
+namespace App\Controller;
+
+use App\Model\Reserva;
+
+class ReservaController {
+
+    private $modeloReserva;
+
+    public function __construct(Reserva $modeloReserva) {
+        $this->modeloReserva = $modeloReserva;
+    }
+
     public function listarReservaAdmin() {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $datos = $reserva->listarReserva();
-        require_once("VIEW/RESERVA/index.php");
+        $datos = $this->modeloReserva->listarReserva();
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 
     public function agregarReservaAdmin($idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado) {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $reserva->agregarReserva($idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
+        $this->modeloReserva->agregarReserva($idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
+        // Aquí podrías manejar la lógica de redireccionamiento o respuesta según necesites
     }
 
     public function editarReservaAdmin($idreserva, $idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado) {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $reserva->editarReserva($idreserva, $idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
+        $this->modeloReserva->editarReserva($idreserva, $idcliente, $idmaquinaria, $idcotize, $idempleado, $fechareserva, $fechainicio, $fechafin, $estado);
+        // Aquí podrías manejar la lógica de redireccionamiento o respuesta según necesites
     }
 
     public function eliminarReservaAdmin($idreserva) {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $resultado = $reserva->eliminarReserva($idreserva);
-
+        $resultado = $this->modeloReserva->eliminarReserva($idreserva);
         if ($resultado) {
-            header("Location: admin.php?action=listarReserva");
-        } else {
-            echo "Error al eliminar la reserva.";
-        }
-        exit();
+            // Idealmente se manejaría el redireccionamiento desde el controlador que llama a este método
+            return true;
+        } 
     }
 
     public function buscarReservaAdmin($termino) {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $datos = $reserva->buscarReserva($termino);
-        require_once("VIEW/RESERVA/buscar.php");
+        $datos = $this->modeloReserva->buscarReserva($termino);
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 
     public function mostrarFormularioEditar($idreserva) {
-        require_once("MODEL/Reserva.php");
-        $reserva = new Reserva();
-        $datos = $reserva->obtenerReservaPorId($idreserva);
-        require_once("VIEW/RESERVA/editar.php");
+        $datos = $this->modeloReserva->obtenerReservaPorId($idreserva);
+        // Aquí normalmente se devolverían los datos o se pasarían a una vista
+        return $datos;
     }
 }
 ?>

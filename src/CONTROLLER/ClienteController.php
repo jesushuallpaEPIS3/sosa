@@ -1,49 +1,51 @@
 <?php
-class clsCliente {
-    public function listarClienteAdmin() {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $clientes = $cliente->listarClientes();
-        require_once("VIEW/CLIENTE/index.php");
+namespace App\Controller;
+
+use App\Model\Cliente;
+
+class ClienteController
+{
+    private $clienteModel;
+
+    public function __construct(Cliente $clienteModel)
+    {
+        $this->clienteModel = $clienteModel;
     }
 
-    public function agregarClienteAdmin($nombre, $apellido, $correo, $iddocumento, $documento, $telefono) {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $cliente->agregarCliente($nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
+    public function listarClienteAdmin()
+    {
+        // Llamar al método del modelo para listar clientes
+        return $this->clienteModel->listarClientes();
     }
 
-    public function editarClienteAdmin($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono) {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $cliente->editarCliente($idcliente, $nombre, $apellido, $correo, $iddocumento, $documento, $telefono);
+    public function agregarClienteAdmin($nombre, $apellido, $correo, $tipoDocumento, $numeroDocumento, $telefono)
+    {
+        // Llamar al método del modelo para agregar un cliente
+        return $this->clienteModel->agregarCliente($nombre, $apellido, $correo, $tipoDocumento, $numeroDocumento, $telefono);
     }
 
-    public function eliminarClienteAdmin($idcliente) {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $resultado = $cliente->eliminarCliente($idcliente);
-
-        if ($resultado) {
-            header("Location: admin.php?action=listarCliente");
-        } else {
-            echo "Error al eliminar el cliente.";
-        }
-        exit();
+    public function editarClienteAdmin($idCliente, $nombre, $apellido, $correo, $tipoDocumento, $numeroDocumento, $telefono)
+    {
+        // Llamar al método del modelo para editar un cliente
+        return $this->clienteModel->editarCliente($idCliente, $nombre, $apellido, $correo, $tipoDocumento, $numeroDocumento, $telefono);
     }
 
-    public function buscarClienteAdmin($termino) {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $clientes = $cliente->buscarCliente($termino);
-        require_once("VIEW/CLIENTE/buscar.php");
+    public function eliminarClienteAdmin($idCliente)
+    {
+        // Llamar al método del modelo para eliminar un cliente
+        return $this->clienteModel->eliminarCliente($idCliente);
     }
 
-    public function mostrarFormularioEditar($idcliente) {
-        require_once("MODEL/Cliente.php");
-        $cliente = new Cliente();
-        $cliente = $cliente->obtenerClientePorId($idcliente);
-        require_once("VIEW/CLIENTE/editar.php");
+    public function buscarClienteAdmin($terminoBusqueda)
+    {
+        // Llamar al método del modelo para buscar clientes
+        return $this->clienteModel->buscarCliente($terminoBusqueda);
+    }
+
+    public function mostrarFormularioEditar($idCliente)
+    {
+        // Llamar al método del modelo para obtener un cliente por su ID
+        return $this->clienteModel->obtenerClientePorId($idCliente);
     }
 }
 ?>
