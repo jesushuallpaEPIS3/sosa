@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use App\Model\Calculadora;
+use Model\Calculadora;
 
 class CalculadoraTest extends TestCase {
     public function testSumar() {
