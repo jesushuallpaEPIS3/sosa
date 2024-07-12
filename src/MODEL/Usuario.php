@@ -14,12 +14,8 @@ class Usuario {
         $stmt = $this->db->prepare("SELECT * FROM tbadmin WHERE usuario = ? AND password = ?");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
-        
         $result = $stmt->get_result();
-        
-        // Debugging: Verificar cuántas filas devuelve la consulta
-        var_dump($result->num_rows); 
-        
         return $result->fetch_assoc();
     }
 }
+?>
