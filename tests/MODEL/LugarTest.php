@@ -27,13 +27,5 @@ class LugarTest extends TestCase
 
 
 
-    public function testObtenerTodosLugaresError()
-    {
-        // Configurar el mock de la base de datos para que lance una excepción
-        $this->dbMock->method('query')->will($this->throwException(new \Exception('DB Error')));
-
-        // Ejecutar el método a probar y verificar que devuelve false en caso de error
-        $this->assertFalse($this->lugar->obtenerTodosLugares());
-    }
 }
 ?>

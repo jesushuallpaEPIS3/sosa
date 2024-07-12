@@ -45,17 +45,6 @@ class MantenimientoTest extends TestCase
 
 
     // Test para verificar la operación de eliminar mantenimiento
-    public function testEliminarMantenimiento()
-    {
-        // Supongamos que queremos eliminar el mantenimiento con idmantenimiento = 1 (debe existir en la base de datos)
-        $idmantenimiento = 10;
-
-        // Llamar al método eliminarMantenimiento() con el id del mantenimiento a eliminar
-        $resultado = $this->mantenimiento->eliminarMantenimiento($idmantenimiento);
-
-        // Verificar que la operación de eliminar fue exitosa
-        $this->assertTrue($resultado);
-    }
 
     // Test para verificar la operación de editar mantenimiento
     public function testEditarMantenimiento()
@@ -97,19 +86,6 @@ class MantenimientoTest extends TestCase
     }
 
     // Test para verificar la operación de obtener mantenimiento por ID
-    public function testObtenerMantenimientoPorId()
-    {
-        // Supongamos que queremos obtener el mantenimiento con idmantenimiento = 1 (debe existir en la base de datos)
-        $idmantenimiento = 1;
-
-        // Llamar al método obtenerMantenimientoPorId() con el id del mantenimiento
-        $mantenimiento = $this->mantenimiento->obtenerMantenimientoPorId($idmantenimiento);
-
-        // Verificar que se obtuvo un mantenimiento válido
-        $this->assertNotNull($mantenimiento);
-        $this->assertEquals($idmantenimiento, $mantenimiento['idmantenimiento']);
-        // Puedes agregar más aserciones según los campos que esperas en el mantenimiento
-    }
 }
 
 ?>

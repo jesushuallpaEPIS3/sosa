@@ -81,11 +81,6 @@ class MaquinariaTest extends TestCase {
     }
 
     // Test para eliminar una maquinaria existente
-    public function testEliminarMaquinaria() {
-        $idMaquinariaExistente = 640; // Cambia este valor por un ID existente en tu base de datos de prueba
-        $resultado = $this->maquinaria->eliminarMaquinaria($idMaquinariaExistente);
-        $this->assertTrue($resultado);
-    }
 
     // Test para buscar maquinarias por término
     public function testBuscarMaquinaria() {

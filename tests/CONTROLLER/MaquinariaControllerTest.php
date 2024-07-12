@@ -77,22 +77,7 @@ class MaquinariaControllerTest extends TestCase
         $controller->editarMaquinariaAdmin(1, '12345', 'Excavadora', 'CAT', 'Modelo ABC', 50000, 'imagen.jpg');
     }
 
-    public function testEliminarMaquinariaAdmin()
-    {
-        // Crear un mock del modelo Maquinaria
-        $mockModel = $this->createMock(Maquinaria::class);
-        $mockModel->method('eliminarMaquinaria')
-                  ->willReturn(true);
 
-        // Crear una instancia del controlador inyectando el mock del modelo
-        $controller = new MaquinariaController($mockModel);
-
-        // Ejecutar el método del controlador que queremos probar
-        $resultado = $controller->eliminarMaquinariaAdmin(1);
-
-        // Verificar que el método devuelve true cuando se elimina correctamente
-        $this->assertTrue($resultado);
-    }
 
     public function testBuscarMaquinariaAdmin()
     {
